@@ -1,5 +1,5 @@
-<h1>Create new product
+<h1>_{MsgCreateNewProduct}
 
 <form method=post action=@{TiendaNewR} entype=#{encoding}>
      ^{widget}
-     <button .btn .btn-default>Create
+     <button .btn .btn-default>_{MsgCreate}

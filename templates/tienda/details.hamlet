@@ -3,5 +3,6 @@
 <div .jumbotron>
   #{tiendaDescripcion tienda}
   #{tiendaPrecio tienda}
-<a href=@{HomeR} .btn .btn-default>Return
+<a href=@{HomeR} .btn .btn-default>
+   _{MsgIndex}
 
