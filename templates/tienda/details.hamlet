@@ -3,4 +3,5 @@
 <div .jumbotron>
   #{tiendaDescripcion tienda}
   #{tiendaPrecio tienda}
+<a href=@{HomeR} .btn .btn-default>Return
 

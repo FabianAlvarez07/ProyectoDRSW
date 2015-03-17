@@ -1,5 +1,6 @@
 <h1>Productos
 
+<a href=@{TiendaNewR} .btn .btn-default>Crear Producto
 <div .jumbotron>
    <ul>
        $forall Entity tId producto<- products
