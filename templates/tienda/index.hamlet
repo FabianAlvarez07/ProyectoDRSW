@@ -1,0 +1,8 @@
+<h1>Productos
+
+<div .jumbotron>
+   <ul>
+       $forall Entity tId producto<- products
+            <li>
+                <a href=@{TiendaR tId}>#{tiendaNombre producto}
+
