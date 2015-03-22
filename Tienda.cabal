@@ -21,6 +21,7 @@ library
                      Settings.StaticFiles
                      Handler.Common
                      Handler.Home
+                     Handler.TiendaNew
 
     if flag(dev) || flag(library-only)
         cpp-options:   -DDEVELOPMENT
@@ -80,7 +81,9 @@ library
                  , containers
                  , vector
                  , time
-
+                 , markdown                      >= 0.1.13     && < 0.1.14
+                 , yesod-text-markdown           >= 0.1.7      && < 0.2
+                 
 executable         Tienda
     if flag(library-only)
         Buildable: False
