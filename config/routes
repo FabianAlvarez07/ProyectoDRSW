@@ -6,3 +6,4 @@
 
 / HomeR GET POST
 /tienda/new TiendaNewR GET POST
+/tienda/!#TiendaId TiendaR GET

@@ -1,0 +1,5 @@
+<h1>Create new product
+
+<form method=post action=@{TiendaNewR} entype=#{encoding}>
+     ^{widget}
+     <button .btn .btn-default>Create
