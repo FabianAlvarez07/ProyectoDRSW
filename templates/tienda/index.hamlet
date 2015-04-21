@@ -7,3 +7,4 @@
             <li>
                 <a href=@{TiendaR tId}>#{tiendaNombre producto}
                 <button onclick=deleteBlog('@{TiendaR tId}') .btn .btn-primary>Delete
+                <a href=@{TiendaUpdateR tId} .btn .btn-primary>Update

@@ -7,3 +7,4 @@
 / HomeR GET 
 /tienda/new TiendaNewR GET POST
 /tienda/!#TiendaId TiendaR GET DELETE
+/tienda/edit/#TiendaId TiendaUpdateR GET POST
