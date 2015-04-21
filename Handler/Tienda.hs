@@ -31,4 +31,10 @@ getTiendaR tId = do
    tienda <- runDB $ get404 tId
    defaultLayout $ do
         $(widgetFile "tienda/details")           
-          
+
+
+deleteTiendaR :: TiendaId -> Handler Html
+deleteTiendaR tId = do
+              runDB $ delete tId
+              defaultLayout $ do
+                   [whamlet| |]          
