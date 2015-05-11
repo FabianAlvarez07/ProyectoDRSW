@@ -1,5 +1,5 @@
-<h1>Update
+<h1>_{MsgUpdate}
 <form method=post action=@{TiendaUpdateR tiendaId} entype=#{encoding}>
      ^{widget}
-     <button .btn .btn-default>Update
-     <a href=@{HomeR} .btn .btn-primary>Cancel
+     <button .btn .btn-default>_{MsgUpdate}
+     <a href=@{HomeR} .btn .btn-primary>_{MsgCancel}

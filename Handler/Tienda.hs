@@ -6,18 +6,20 @@ import Yesod.Text.Markdown (markdownField)
  
 tiendaForm :: Maybe Tienda -> AForm Handler Tienda
 tiendaForm mTienda = Tienda
-          <$> areq textField (bfs ("nombre"::Text)) (tiendaNombre <$> mTienda)
-          <*> areq markdownField (bfs ("descripcion"::Text)) (tiendaDescripcion <$> mTienda)
-          <*> areq doubleField (bfs ("precio"::Text)) (tiendaPrecio <$> mTienda)
+          <$> areq textField (bfs MsgName) (tiendaNombre <$> mTienda)
+          <*> areq markdownField (bfs MsgDescription) (tiendaDescripcion <$> mTienda)
+          <*> areq doubleField (bfs MsgPrice) (tiendaPrecio <$> mTienda)
 
 getTiendaNewR :: Handler Html
 getTiendaNewR = do
+       uid <- requireAuthId
        (widget, encoding) <- generateFormPost $ renderBootstrap3 BootstrapBasicForm $ tiendaForm Nothing
        defaultLayout $ do
            $(widgetFile "tienda/new") 
 
 postTiendaNewR :: Handler Html
 postTiendaNewR = do
+       uid <- requireAuthId
        ((result, widget), encoding) <- runFormPost $ renderBootstrap3 BootstrapBasicForm $ tiendaForm Nothing
        case result of
             FormSuccess tienda -> do
@@ -35,12 +37,14 @@ getTiendaR tId = do
 
 deleteTiendaR :: TiendaId -> Handler Html
 deleteTiendaR tId = do
+              uid <- requireAuthId
               runDB $ delete tId
               defaultLayout $ do
                    [whamlet| |]          
 
 getTiendaUpdateR :: TiendaId -> Handler Html
 getTiendaUpdateR tiendaId = do
+             uid <- requireAuthId
              tienda <- runDB $ get404 tiendaId
              (widget, encoding) <- generateFormPost $
                       renderBootstrap3 BootstrapBasicForm $ tiendaForm (Just tienda)
@@ -49,6 +53,7 @@ getTiendaUpdateR tiendaId = do
 
 postTiendaUpdateR :: TiendaId -> Handler Html
 postTiendaUpdateR tiendaId = do
+          uid <- requireAuthId
           tienda <- runDB $ get404 tiendaId
           ((result,widget), encoding) <- runFormPost $
                      renderBootstrap3 BootstrapBasicForm

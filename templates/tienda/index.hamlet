@@ -1,10 +1,17 @@
 <h1>_{MsgProducts}
+$maybe id <- mid
+   <a href=@{TiendaNewR} .btn .btn-default>_{MsgNewProduct}
 
-<a href=@{TiendaNewR} .btn .btn-default>_{MsgNewProduct}
+<div>
+   $maybe id <- mid
+      <a href=@{AuthR LogoutR} .btn .btn-default>_{MsgLogout}
+   $nothing
+      <a href=@{AuthR LoginR}  .btn .btn-default>_{MsgLogin} 
 <div .jumbotron>
    <ul>
        $forall Entity tId producto<- products
             <li>
                 <a href=@{TiendaR tId}>#{tiendaNombre producto}
-                <button onclick=deleteBlog('@{TiendaR tId}') .btn .btn-primary>Delete
-                <a href=@{TiendaUpdateR tId} .btn .btn-primary>Update
+                $maybe id <- mid
+                     <a href=@{TiendaUpdateR tId} .btn .btn-primary>_{MsgUpdate}
+                     <button onclick=deleteBlog('@{TiendaR tId}') .btn .btn-primary>_{MsgMyDelete}

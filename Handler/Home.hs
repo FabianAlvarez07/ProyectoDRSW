@@ -13,6 +13,7 @@ import Yesod.Form.Bootstrap3 (BootstrapFormLayout (..), renderBootstrap3,
 -- inclined, or create a single monolithic file.
 getHomeR :: Handler Html
 getHomeR = do
+          mid <- maybeAuthId 
           products <- runDB $ selectList [] [Asc TiendaId]
           defaultLayout $ do
               $(widgetFile "tienda/index")
