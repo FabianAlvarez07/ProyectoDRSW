@@ -9,6 +9,7 @@ Cancel : Cancelar
 Login : Iniciar sesion
 Logout : Cerrar sesion
 AddShoppingCart : Agregar al carrito
+Find : Buscar
 
 Name : Nombre
 Description : Descripcion

@@ -1,6 +1,10 @@
 <h1>_{MsgProducts}
 $maybe id <- mid
    <a href=@{TiendaNewR} .btn .btn-default>_{MsgNewProduct}
+<div>
+  <form method=post action=@{HomeR} entype=#{encoding}>
+     ^{widget}
+     <button .btn .btn-default>_{MsgFind}
 
 <div>
    $maybe id <- mid

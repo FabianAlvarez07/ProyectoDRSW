@@ -9,7 +9,7 @@ Cancel : Cancel
 Login : Log in
 Logout : Log out
 AddShoppingCart : Add to shopping cart
-
+Find : Find
 Name : Name
 Description : Description
 Price : Price
